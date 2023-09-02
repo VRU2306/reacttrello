@@ -113,5 +113,7 @@
 }
 
 body {
-  font-family: 'Satoshi-Variable';
+  font-family: 'Satoshi-Variable' !important;
+  background-color: #18191a !important;
+  color: #ffffff !important;
 }

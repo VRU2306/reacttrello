@@ -1,0 +1,94 @@
+// Colors
+
+//Please don't change this theme colors. This are branding colors
+$primary: #008DEA;
+$secondary: #2F455C;
+$success: #198754;
+$info: #0DCAF0;
+$warning: #FD7E14;
+$danger: #DC3545;
+$light: #F8F9FA;
+$dark: #212529;
+$purple: #7357FF;
+$indigo: #0F4B87;
+$gray: #BCBEBF;
+$lightgray: #D5DADE;
+$primarydark: #00558C;
+$pink: #D63384;
+
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+    "purple": $purple,
+    "indigo": $indigo,
+    "gray": $gray,
+    "primary-dark": $primarydark,
+    "pink":$pink
+);
+
+$input-bg: transparent;
+//Font-family
+
+$font-family-base: "Satoshi-Variable", "Open Sans", system-ui, -apple-system, sans-serif;
+$font-family: "Satoshi-Variable", "Open Sans", system-ui, -apple-system, sans-serif;
+$font-size-base: 0.875rem;
+
+// Accordian
+$accordion-button-padding-y: 0.5rem;
+
+//breadcrumb style
+$breadcrumb-divider-color: $light;
+$breadcrumb-active-color: $primary;
+
+//enable variable for negative margin
+$enable-negative-margins: true;
+
+//Spacer Variables
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 2,
+    6: $spacer * 3,
+    7: $spacer * 4,
+    8: $spacer * 5,
+    9: $spacer * 6,
+    10: $spacer * 8
+);
+
+$border-radius: 1rem;
+
+$btn-border-radius : $border-radius*50;
+$btn-border-radius-lg: $btn-border-radius;
+/*all input control border radius*/
+$input-border-radius: $border-radius;
+$input-border-radius-lg: $border-radius;
+
+// Card variables
+$card-border-radius: $border-radius * 0.5;
+
+// Badge Variables
+$variable-prefix: bs-;
+$badge-bg-scale: 20%;
+$enable-gradients: false;
+$badge-border-scale: -10%;
+$badge-color-scale: 40%;
+$min-contrast-ratio: 4.5%;
+$badge-padding-x: 1em;
+$badge-padding-y: 1em;
+// Accordion variables
+$accordion-button-active-color: $dark;
+$accordion-button-active-bg: $light;
+$headings-font-weight: 700;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
