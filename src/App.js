@@ -2,18 +2,11 @@ import './App.css';
 import {
   BrowserRouter as Router, Route, Routes
 } from "react-router-dom";
-import { useEffect, useState } from 'react';
 import Login from "./components/Authentication/Login/Login";
 import Sidebar from './components/Sidebar/Sidebar';
 import Dashboard from './components/Dashboard/Dashboard';
+import Page from './components/Page/Page';
 function App() {
-  let token = localStorage.getItem('token');
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
-  useEffect(() => {
-    if (token === null) {
-      setIsLoggedIn(false)
-    }
-  }, [])
   return (
     <div className="App">
       <Router>
@@ -22,10 +15,10 @@ function App() {
           {/* <Route path='/Register' element={<Register />} />
           <Route path="/Passwordreset" element={<ForgotPasswordEmail />} />
           <Route path="/resetauth" element={<ResetAuth />} /> */}
-          <Route element={isLoggedIn ? <Sidebar /> : <Login />}>
+          <Route element={<Sidebar />}>
             <Route path="/main/dashboard" element={<Dashboard />} />
-            {/* <Route path="/main/settings" element={<Settings />} />
-            <Route path="/main/help&support" element={<Help />} /> */}
+            <Route path="/main/page" element={<Page />} />
+            {/* <Route path="/main/help&support" element={<Help />} /> */}
 
             {/* <Route path="/profile"element={<Profile/>}/> */}
           </Route>

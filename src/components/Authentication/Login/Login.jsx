@@ -8,6 +8,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Link } from "react-router-dom";
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles'
 import { CssBaseline, Container } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 const darkTheme = createTheme({
     palette: {
         mode: 'dark',
@@ -16,6 +17,7 @@ const darkTheme = createTheme({
     },
 });
 export default function Login() {
+    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const [toast, setToast] = useState('data')
@@ -88,13 +90,18 @@ export default function Login() {
                                     }
                                 />
                             </div>
-                            <Link to="/PasswordReset" className="text-decoration-none d-flex justify-content-end text-primary">Forgot Password ?</Link>
+                            <Link to="/PasswordReset" className="text-decoration-none d-flex justify-content-end text-primary mt-2">Forgot Password ?</Link>
 
 
                             <button className='btn btn-primary rounded-1 mt-3 w-100 text-white' type="submit">Login</button>
                             <br />
                             {
-                                toast === "Fail" && toast !=='data' ? (
+                                toast === 'Success' ? (
+                                    <p className="text-success text-center mt-2">Login SuccessFull</p>
+                                ) : ''
+                            }
+                            {
+                                toast === "Fail" && toast !== 'data' ? (
                                     <p className="text-danger text-center mt-2">Invalid Login Credentials. Please Try Again</p>
                                 ) : ''
                             }
@@ -122,17 +129,17 @@ export default function Login() {
         let response = await fetch('/api/users/login', requestOptions);
         let res = await response.json();
         try {
-            // if (res.status === 200) {
-            // setToast('Success')
-            // console.log(res, toast)
-
-            localStorage.setItem("token", res?.id)
-            localStorage.setItem("userDetails", res.userId)
-            // console.log(toast, setToast)
-            window.location.href = ("/main/dashboard");
-            // }
-            if (res.status !== 200) {
+            if (response.status === 200) {
+                setToast('Success')
+                localStorage.setItem("token", res?.id)
+                localStorage.setItem("userDetails", res.userId)
+                // window.location.href = ("/main/dashboard");
+                navigate('/main/dashboard')
+            }
+            else {
                 setToast('Fail')
+            }
+            if (res.status !== 200) {
                 return "Server Error"
             }
         }

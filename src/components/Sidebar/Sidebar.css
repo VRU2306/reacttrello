@@ -1,0 +1,71 @@
+.w-20-custom {
+    width: 6%;
+}
+
+.active {
+    border-radius: 4px;
+    width: 236px;
+    height: 35px;
+    text-decoration: none;
+    background: #222324;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.activated {
+    border-radius: 4px;
+    width: 236px;
+    height: 35px;
+    text-decoration: none;
+    color: #dfdfe0;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.activated:hover {
+    background: #222324;
+    border-radius: 4px;
+}
+
+.sidenav {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 14px;
+    font-family: "Satoshi-Variable";padding: 0.5rem;
+    position: absolute;
+}
+
+.sidenav:hover {
+    font-weight: 500;
+}
+
+.sidenavselected {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 14px;
+    font-family: "Satoshi-Variable";
+padding: 0.5rem;
+    position: absolute;
+}
+.sideactivated:hover {
+    background: #222324;
+    border-radius: 4px;
+}
+/*  */
+.icon {
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 25px;
+}
+
+.dashboard {
+    margin-left: 17px;
+    /* margin-top: 9px; */
+    background-image: url(../../assets/UI/House\ with\ garden.svg);
+}
+.page{
+    margin-left: 17px;
+    background-image: url(../../assets/UI/Modules.svg);
+}
