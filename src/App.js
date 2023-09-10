@@ -6,15 +6,16 @@ import Login from "./components/Authentication/Login/Login";
 import Sidebar from './components/Sidebar/Sidebar';
 import Dashboard from './components/Dashboard/Dashboard';
 import Page from './components/Page/Page';
+import Register from './components/Authentication/Register/Register';
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
           <Route path='/' element={<Login />} />
-          {/* <Route path='/Register' element={<Register />} />
-          <Route path="/Passwordreset" element={<ForgotPasswordEmail />} />
-          <Route path="/resetauth" element={<ResetAuth />} /> */}
+          <Route path='/register' element={<Register />} />
+          {/* <Route path="/Passwordreset" element={<ForgotPasswordEmail />} /> */}
+          {/* <Route path="/resetauth" element={<ResetAuth />} /> */}
           <Route element={<Sidebar />}>
             <Route path="/main/dashboard" element={<Dashboard />} />
             <Route path="/main/page" element={<Page />} />
